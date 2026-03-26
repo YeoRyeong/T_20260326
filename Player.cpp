@@ -32,6 +32,15 @@ void APlayer::Tick()
 	{
 		Y++;
 	}
+
+	if (UEngine::KeyCode == 'a')
+	{
+		X--;
+	}
+	if (UEngine::KeyCode == 'd')
+	{
+		X++;
+	}
 }
 
 void APlayer::Render()
