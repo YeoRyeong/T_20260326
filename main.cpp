@@ -9,46 +9,52 @@
 
 using namespace std;
 
-// 전역 변수
-int Value = 1;
-
-class Static
+int main()
 {
+	//AActor* Actor = new APlayer();
+	//Actor->Render();
+
+	GEngine->GetInstance();
+	//UEngine* MyEngine = UEngine::GetInstance();
+
+	GEngine->GetWorld()->Load("Map.txt");
+
+	GEngine->Run();
+
+	delete GEngine;
+
+	return 0;
+}
+
+/*class Singleton
+{
+
+private:
+	Singleton()
+	{
+
+	}
+	static Singleton* Instance; // 전역으로 사용
+
 public:
-	Static()
+	static Singleton* GetInstance()
 	{
-		Count++;
-	}
-	virtual ~Static()
-	{
-		Count--;
-	}
-	// 예외
-	// 정적 변수
-	static int Count;
-
-	//int Value; // 선언을 해도 멤버 변수가 접근을 못함. 
-
-	// 정적 함수
-	static void Display()
-	{
-		//Value = 1;// 멤버 변수가 접근을 못함.
-		cout << Count << endl;
+		if(Instance == nullptr)
+		{
+			Instance = new Singleton();
+		}
+		return Instance;
 	}
 };
 
-int Static::Count = 0;
+Singleton* Singleton::Instance = nullptr;
 
 int main()
 {
-	Static* D = new Static();
+	Singleton::GetInstance();
 
-	Static::Display();
-	delete D;
-
-
-	Static::Display();
-}
+	return 0;
+}*/
 
 /*int main()
 {
@@ -84,21 +90,7 @@ int main()
 
 
 
-/*int main()
-{
-	//AActor* Actor = new APlayer();
-	//Actor->Render();
 
-	UEngine* MyEngine = new UEngine();
-
-	MyEngine->GetWorld()->Load("Map.txt");
-
-	MyEngine->Run();
-
-	delete MyEngine;
-
-	return 0;
-}*/
 
 
 
