@@ -3,11 +3,6 @@
 
 using namespace std;
 
-class CustomDataType
-{
-
-};
-
 int main()
 {
 
@@ -29,7 +24,7 @@ int main()
 //	char Message[1024] = "Hello World";
 	//String S3(S1.operator+(" ") + S2);
 	String S1 = "Hello";  
-	String S2 = "World";
+	String S2 = "Hello";
 
 
 	//String S3 = S1 + " " + S2;
