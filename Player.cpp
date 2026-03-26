@@ -1,28 +1,31 @@
 #include "Player.h"
+
 #include <iostream>
 
-APlayer::APlayer()
+APlayer::APlayer(int InX, int InY, char InMesh)
 {
-	std::cout << "APlayer 생성자" << std::endl;
+	X = InX;
+	Y = InY;
+	Mesh = InMesh;
 }
 
 APlayer::~APlayer()
 {
-	std::cout << "APlayer 소멸자" << std::endl;
 }
 
 void APlayer::BeginPlay()
 {
+	__super::BeginPlay();
+
 }
 
 void APlayer::Tick()
 {
+	__super::Tick();
 }
 
 void APlayer::Render()
 {
-}
-void APlayer::ApplyDamage(AActor* Other)
-{
-	std::cout << "공격한다." << std::endl;
+	//AActor::Render();
+	__super::Render();
 }

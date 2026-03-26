@@ -1,5 +1,8 @@
 #pragma once
 #include <vector>
+#include <string>
+
+class AActor;
 
 class UWorld
 {
@@ -13,15 +16,23 @@ public:
 		AActor* NewActor = new T;
 		Actors.push_back(NewActor);
 
-		return nullptr;
+		return NewActor;
 	}
+
+	void Load(std::string MapName);
+
 
 	inline std::vector<class AActor*>& GetActors()
 	{
 		return Actors;
 	}
 
-protected:
-	std::vector<class AActor*> Actors;
-};
+	void Tick();
 
+	void Render();
+
+protected:
+
+	std::vector<class AActor*> Actors;
+
+};

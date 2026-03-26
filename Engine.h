@@ -3,7 +3,7 @@
 #include <vector>
 
 class AActor;
-
+class UWorld;
 
 class UEngine
 {
@@ -16,16 +16,17 @@ public:
 
 	void Run();
 
-	template<typename T>
-	void SpawnActor(const AActor* NewActor);
-
-	std::vector<AActor*> GetAllActorOfTag();
-
+	inline UWorld* GetWorld()
+	{
+		return World;
+	}
 
 protected:
 	void Input();
 	void Tick();
 	void Render();
 
-	std::vector<AActor*> Actors;
+	class UWorld* World;
+
+	int bIsRunning : 1; // int형중에 1비트만 사용하겠다. b를 쓰면 boolean
 };

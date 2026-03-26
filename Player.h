@@ -4,7 +4,7 @@
 class APlayer : public AActor
 {
 public:
-	APlayer();
+	APlayer(int InX = 1, int InY = 1, char InMesh = 'P');
 	virtual ~APlayer();
 
 	virtual void BeginPlay() override;
@@ -12,6 +12,4 @@ public:
 	virtual void Tick() override;
 
 	virtual void Render() override;
-
-	void ApplyDamage(AActor* Other);
 };
