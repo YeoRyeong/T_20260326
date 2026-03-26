@@ -11,7 +11,7 @@ using namespace std;
 
 
 
-int main() 
+/*int main()
 {
 	ifstream MapStream("Map.txt");
 	
@@ -20,18 +20,18 @@ int main()
 
 	while (!MapStream.eof())
 	{
-		//string Line;
-		//getline(MapStream, Line);
+		string Line;
+		getline(MapStream, Line);
 		MapStream.read(&Data, 1);
-		if (Data == 10)
+		for(int X = 0; X < Line.length(); ++X)
 		{
-			Y++;
+		cout << Line[X];
 		}
-		cout << Data;
+		cout << endl;
 	}
-	//cout << Y << endl;
+
 	return 0;
-}
+}*/
 
 
 
@@ -45,21 +45,21 @@ int main()
 
 
 
-/*int main()
+int main()
 {
 	//AActor* Actor = new APlayer();
 	//Actor->Render();
 
 	UEngine* MyEngine = new UEngine();
 
-	MyEngine->GetWorld()->Load("level01.umap");
+	MyEngine->GetWorld()->Load("Map.txt");
 
 	MyEngine->Run();
 
 	delete MyEngine;
 
 	return 0;
-}*/
+}
 
 
 
