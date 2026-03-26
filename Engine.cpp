@@ -17,13 +17,11 @@ void UEngine::Term()
 {
 }
 
+
 void UEngine::Run()
 {
 }
 
-void UEngine::SpawnActor(AActor* NewActor)
-{
-}
 
 void UEngine::Input()
 {

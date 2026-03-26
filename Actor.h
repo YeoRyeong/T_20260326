@@ -8,9 +8,8 @@ public:
 
 	virtual void BeginPlay();
 
-	// override
+	//override
 	virtual void Tick();
 
 	virtual void Render();
 };
-

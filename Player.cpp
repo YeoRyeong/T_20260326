@@ -22,7 +22,7 @@ void APlayer::Tick()
 void APlayer::Render()
 {
 }
-void APlayer::ApplyDamage(AActor* Actor)
+void APlayer::ApplyDamage(AActor* Other)
 {
 	std::cout << "공격한다." << std::endl;
 }

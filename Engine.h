@@ -1,5 +1,9 @@
 #pragma once
+
 #include <vector>
+
+class AActor;
+
 
 class UEngine
 {
@@ -8,23 +12,20 @@ public:
 	~UEngine();
 
 	void Init();
-
 	void Term();
 
 	void Run();
-	
-	tamplate<typename T>
 
-	void SpawnActor(AActor* NewActor);
-	std::vector<AActor*> GetAllActorOfClass();
+	template<typename T>
+	void SpawnActor(const AActor* NewActor);
+
+	std::vector<AActor*> GetAllActorOfTag();
+
 
 protected:
 	void Input();
-
 	void Tick();
-
 	void Render();
 
 	std::vector<AActor*> Actors;
 };
-

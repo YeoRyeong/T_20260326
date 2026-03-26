@@ -5,20 +5,18 @@ using namespace std;
 
 int main()
 {
-	// APlayer MyPlayer; 이렇게 안함 
-	AActor* Monster = new APlayer; // 부모로 선언이 가능
-	AActor* MyActor = new AActor; // 부모로 선언이 가능
+	AActor* Monster = new APlayer();
+	AActor* MyActor = new AActor();
 
-	// Down Casting, 동적 변환 -> 거꾸로도 잇음
-	APlayer* Player = dynamic_cast<APlayer*>(MyActor); // MyActor가 맞는지 물어봄.
-		
-	if (Player) // 0
+	//Down Casting, 동적 변환, 
+	APlayer* Player = dynamic_cast<APlayer*>(MyActor);
+
+	if (Player)
 	{
 		Player->ApplyDamage(Monster);
-
 	}
-	
-	// 모든 액터를 어찌한다.
+
+	//모든 액터를 어찌한다.
 
 	delete MyActor;
 
