@@ -31,7 +31,7 @@ void UEngine::Run()
 {
 	while (bIsRunning)
 	{
-		Input();
+		//Input();
 		Tick();
 		Render();
 	}

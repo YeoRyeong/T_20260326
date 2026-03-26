@@ -26,4 +26,6 @@ void AActor::Render()
 	Coordinate.X = X;
 	Coordinate.Y = Y;
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), Coordinate);
+
+	std::cout << Mesh;
 }
