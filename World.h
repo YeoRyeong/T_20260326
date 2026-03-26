@@ -21,7 +21,6 @@ public:
 
 	void Load(std::string MapName);
 
-
 	inline std::vector<class AActor*>& GetActors()
 	{
 		return Actors;

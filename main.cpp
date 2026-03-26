@@ -3,10 +3,49 @@
 #include "World.h"
 #include "Actor.h"
 #include "Player.h"
+#include "Monster.h"
+
+#include <fstream>
 
 using namespace std;
 
-int main()
+
+
+int main() 
+{
+	ifstream MapStream("Map.txt");
+	
+	char Data;
+	int Y = 0;
+
+	while (!MapStream.eof())
+	{
+		//string Line;
+		//getline(MapStream, Line);
+		MapStream.read(&Data, 1);
+		if (Data == 10)
+		{
+			Y++;
+		}
+		cout << Data;
+	}
+	//cout << Y << endl;
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*int main()
 {
 	//AActor* Actor = new APlayer();
 	//Actor->Render();
@@ -20,7 +59,7 @@ int main()
 	delete MyEngine;
 
 	return 0;
-}
+}*/
 
 
 

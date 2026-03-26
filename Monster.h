@@ -1,0 +1,16 @@
+#pragma once
+#include "Actor.h"
+
+class AMonster : public AActor
+{
+public:
+	AMonster(int InX = 9, int InY = 9, char Mesh = 'M');
+	virtual~AMonster();
+
+	virtual void BeginPlay() override;
+
+	virtual void Tick() override;
+
+	virtual void Render() override;
+};
+
