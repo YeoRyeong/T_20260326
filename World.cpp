@@ -5,8 +5,8 @@
 #include "Actor.h"
 #include "Player.h"
 #include "Monster.h"
-#include "Wall.h"
 #include "Goal.h"
+#include "Wall.h"
 #include "Floor.h"
 
 UWorld::UWorld()
@@ -30,25 +30,42 @@ void UWorld::Load(std::string MapName) {
 	//SpawnActor<AGoal>()->SetActorLocation(8, 8);
 	//SpawnActor<AWall>()->SetActorLocation(0, 0);
 	//SpawnActor<AFloor>()->SetActorLocation(3, 5);
-	
+
 	// 파일 읽어서 생성
 	// fopen	
 	// ifstream
-	std::ifstream MapStream("Map.txt");
+	std::ifstream MapStream(MapName);
 
 	int Y = 0;
-
 	while (!MapStream.eof())
 	{
 		std::string Line;
 		std::getline(MapStream, Line);
 		for (int X = 0; X < Line.length(); ++X)
 		{
-			SpawnActor<AWall>()->SetActorLocation(X, Y);
-
+			if (Line[X] == '*')
+			{
+				SpawnActor<AWall>()->SetActorLocation(X, Y);
+			}
+			else if (Line[X] == ' ')
+			{
+				SpawnActor<AFloor>()->SetActorLocation(X, Y);
+			}
+			else if (Line[X] == 'P')
+			{
+				SpawnActor<APlayer>()->SetActorLocation(X, Y);
+			}
+			else if (Line[X] == 'M')
+			{
+				SpawnActor<AMonster>()->SetActorLocation(X, Y);
+			}
+			else if (Line[X] == 'G')
+			{
+				SpawnActor<AGoal>()->SetActorLocation(X, Y);
+			}
 		}
+		Y++;
 	}
-
 }
 
 void UWorld::Tick()

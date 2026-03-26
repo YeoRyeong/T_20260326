@@ -9,7 +9,41 @@
 
 using namespace std;
 
+// 전역 변수
+int Value = 1;
 
+class Static
+{
+public:
+	Static()
+	{
+		Count++;
+	}
+	virtual ~Static()
+	{
+		Count--;
+	}
+	// 정적 변수
+	static int Count;
+
+	static void Display()
+	{
+		cout << Count << endl;
+	}
+};
+
+int Static::Count = 0;
+
+int main()
+{
+	Static* D = new Static();
+
+	delete D;
+
+	Static::Display();
+
+	cout << Static::Count << endl;
+}
 
 /*int main()
 {
@@ -45,7 +79,7 @@ using namespace std;
 
 
 
-int main()
+/*int main()
 {
 	//AActor* Actor = new APlayer();
 	//Actor->Render();
@@ -59,7 +93,7 @@ int main()
 	delete MyEngine;
 
 	return 0;
-}
+}*/
 
 
 
