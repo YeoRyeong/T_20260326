@@ -23,11 +23,16 @@ public:
 	{
 		Count--;
 	}
+	// 예외
 	// 정적 변수
 	static int Count;
 
+	//int Value; // 선언을 해도 멤버 변수가 접근을 못함. 
+
+	// 정적 함수
 	static void Display()
 	{
+		//Value = 1;// 멤버 변수가 접근을 못함.
 		cout << Count << endl;
 	}
 };
@@ -38,11 +43,11 @@ int main()
 {
 	Static* D = new Static();
 
+	Static::Display();
 	delete D;
 
-	Static::Display();
 
-	cout << Static::Count << endl;
+	Static::Display();
 }
 
 /*int main()
